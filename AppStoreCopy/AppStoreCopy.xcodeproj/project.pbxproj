@@ -14,6 +14,10 @@
 		CEFD2CA12945A4F40058999A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFD2C9F2945A4F40058999A /* Main.storyboard */; };
 		CEFD2CA32945A4F50058999A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFD2CA22945A4F50058999A /* Assets.xcassets */; };
 		CEFD2CA62945A4F50058999A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFD2CA42945A4F50058999A /* LaunchScreen.storyboard */; };
+		CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CAD2945A7A00058999A /* MainCoordinator.swift */; };
+		CEFD2CB02945A8310058999A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CAF2945A8310058999A /* MainTabBarController.swift */; };
+		CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB12945B0260058999A /* Coordinator.swift */; };
+		CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		CEFD2CA22945A4F50058999A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEFD2CA52945A4F50058999A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEFD2CA72945A4F50058999A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEFD2CAD2945A7A00058999A /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CEFD2CAF2945A8310058999A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CEFD2CB12945B0260058999A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCoordinator.swift; sourceTree = "<group>"; };
 		F7168D0A9DC8E0BE0A73DC2C /* Pods_AppStoreCopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreCopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +56,6 @@
 				76FBACC1910894688C9FC427 /* Pods-AppStoreCopy.debug.xcconfig */,
 				B7EC1DB900770A291B85F846 /* Pods-AppStoreCopy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -74,6 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				CEFD2C992945A4F40058999A /* AppDelegate.swift */,
+				CEFD2CAD2945A7A00058999A /* MainCoordinator.swift */,
+				CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */,
+				CEFD2CB12945B0260058999A /* Coordinator.swift */,
+				CEFD2CAF2945A8310058999A /* MainTabBarController.swift */,
 				CEFD2C9B2945A4F40058999A /* SceneDelegate.swift */,
 				CEFD2C9D2945A4F40058999A /* ViewController.swift */,
 				CEFD2C9F2945A4F40058999A /* Main.storyboard */,
@@ -208,7 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFD2C9E2945A4F40058999A /* ViewController.swift in Sources */,
+				CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */,
+				CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */,
+				CEFD2CB02945A8310058999A /* MainTabBarController.swift in Sources */,
 				CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */,
+				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
 				CEFD2C9C2945A4F40058999A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
