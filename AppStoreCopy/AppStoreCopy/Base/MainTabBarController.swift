@@ -8,12 +8,20 @@
 import Foundation
 import UIKit
 
-class MainTabBarController: UITableViewController {
+final class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .yellow
     }
     
+    private func configureVoewControllers() {
+        
+        
+        viewControllers = [
+            
+        ]
+    }
     
     
 }

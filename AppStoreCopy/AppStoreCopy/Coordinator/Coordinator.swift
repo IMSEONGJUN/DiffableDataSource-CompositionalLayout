@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol Coordinator: AnyObject {
+protocol Coordinator: AnyObject, HasDisposeBag {
     var rootViewController: UIViewController? { get set }
     var disposeBag: DisposeBag { get }
     
