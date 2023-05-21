@@ -16,4 +16,9 @@ class AbstractCoordinator: Coordinator {
     deinit {
         print("@@@ Deinit \(self)")
     }
+    
+    @discardableResult
+    func start() -> UIViewController {
+        return UIViewController()
+    }
 }

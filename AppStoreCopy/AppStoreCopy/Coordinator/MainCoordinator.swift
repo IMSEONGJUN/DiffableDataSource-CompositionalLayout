@@ -26,14 +26,23 @@ final class MainCoordinator: AbstractCoordinator {
         mainViewController as? MainTabBarController
     }
     
+    weak var todayViewController: UIViewController?
+    weak var appsViewController: UIViewController?
+    weak var searchViewController: UIViewController?
+    
     init(window: UIWindow) {
         self.window = window
         window.makeKeyAndVisible()
     }
     
     @discardableResult
-    func start() -> UIViewController {
+    override func start() -> UIViewController {
         let mainTabBarController = MainTabBarController()
+        let todayNavigationController = UINavigationController(rootViewController: TodayCoordinator().start())
+        self.todayViewController = todayNavigationController
+        
+        mainTabBarController.viewControllers = [todayNavigationController]
+        
         self.mainViewController = mainTabBarController
         return mainTabBarController
     }

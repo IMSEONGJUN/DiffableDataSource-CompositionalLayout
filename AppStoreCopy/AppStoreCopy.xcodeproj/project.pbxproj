@@ -11,6 +11,7 @@
 		CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */; };
 		CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */; };
 		CEEC4C062A0D297600E55596 /* AppStoreTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C052A0D297600E55596 /* AppStoreTodayViewModel.swift */; };
+		CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */; };
 		CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2C992945A4F40058999A /* AppDelegate.swift */; };
 		CEFD2C9E2945A4F40058999A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2C9D2945A4F40058999A /* ViewController.swift */; };
 		CEFD2CA32945A4F50058999A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFD2CA22945A4F50058999A /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMViewController.swift; sourceTree = "<group>"; };
 		CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeProtocol.swift; sourceTree = "<group>"; };
 		CEEC4C052A0D297600E55596 /* AppStoreTodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayViewModel.swift; sourceTree = "<group>"; };
+		CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCoordinator.swift; sourceTree = "<group>"; };
 		CEFD2C962945A4F40058999A /* AppStoreCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFD2C992945A4F40058999A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEFD2C9D2945A4F40058999A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFD2CAD2945A7A00058999A /* MainCoordinator.swift */,
+				CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */,
 				CEFD2CBB2945C38A0058999A /* TodayCoordinator.swift */,
 				CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */,
 				CEFD2CB12945B0260058999A /* Coordinator.swift */,
@@ -300,6 +303,7 @@
 				CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */,
 				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
 				CEFD2CB62945C3150058999A /* AppStoreTodayViewController.swift in Sources */,
+				CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */,
 				CEFD2CBA2945C34B0058999A /* AppStoreSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

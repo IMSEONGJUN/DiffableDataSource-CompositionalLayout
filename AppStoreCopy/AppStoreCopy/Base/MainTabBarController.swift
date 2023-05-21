@@ -14,14 +14,4 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .yellow
     }
-    
-    private func configureVoewControllers() {
-        
-        
-        viewControllers = [
-            
-        ]
-    }
-    
-    
 }

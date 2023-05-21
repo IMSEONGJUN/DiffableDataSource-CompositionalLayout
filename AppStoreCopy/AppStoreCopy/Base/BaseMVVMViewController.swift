@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-typealias MVVMViewController = BaseMVVMViewController & ViewConfigurable & UniDirectionalBindable & HasViewModel
+typealias MVVMViewController = BaseViewController & ViewConfigurable & UniDirectionalBindable & HasViewModel
 
 protocol ViewConfigurable: AnyObject {
     func configureViews()
@@ -30,7 +30,7 @@ protocol HasViewModel: AnyObject {
     init(viewModel: ViewModel)
 }
 
-class BaseMVVMViewController: UIViewController, HasDisposeBag {
+class BaseViewController: UIViewController, HasDisposeBag {
     var disposeBag = DisposeBag()
     
     override func loadView() {

@@ -10,7 +10,7 @@ import UIKit
 
 final class AppStoreTodayViewController<ViewModel: ViewModelTypeProtocol>: MVVMViewController {
     
-    var viewModel: ViewModel
+    let viewModel: ViewModel
     
     required init(viewModel: ViewModel) {
         self.viewModel = viewModel

@@ -14,8 +14,6 @@ protocol Coordinator: AnyObject, HasDisposeBag {
     var rootViewController: UIViewController? { get set }
     var disposeBag: DisposeBag { get }
     
-    func registerRootViewController(viewController: UIViewController)
-    
     @discardableResult
     func start() -> UIViewController
 }
@@ -32,9 +30,4 @@ extension Coordinator {
     }
     
     func noOp() {}
-    
-    @discardableResult
-    func start() -> UIViewController {
-        return UIViewController()
-    }
 }
