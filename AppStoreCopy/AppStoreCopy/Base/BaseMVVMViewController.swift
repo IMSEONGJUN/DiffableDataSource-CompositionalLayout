@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 
 typealias MVVMViewController = BaseViewController & ViewConfigurable & UniDirectionalBindable & HasViewModel
+typealias MVVMCViewController = MVVMViewController & HasCoordinator
 
 protocol ViewConfigurable: AnyObject {
     func configureViews()
@@ -28,6 +29,11 @@ protocol HasViewModel: AnyObject {
     var viewModel: ViewModel { get }
     
     init(viewModel: ViewModel)
+}
+
+protocol HasCoordinator {
+    associatedtype T: Coordinator
+    var coordinator: T? { get }
 }
 
 class BaseViewController: UIViewController, HasDisposeBag {

@@ -8,9 +8,12 @@
 import UIKit
 
 final class TodayCoordinator: AbstractCoordinator {
-    override func start() -> UIViewController {
+    func start() -> UIViewController {
         let todayViewController = AppStoreTodayViewController<AppStoreTodayViewModel>(viewModel: .init())
+        todayViewController.coordinator = self
         todayViewController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "note"), tag: 0)
+        registerRootViewController(viewController: todayViewController)
+
         return todayViewController
     }
 }

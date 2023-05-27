@@ -8,9 +8,10 @@
 import Foundation
 import UIKit
 
-final class AppStoreTodayViewController<ViewModel: ViewModelTypeProtocol>: MVVMViewController {
+final class AppStoreTodayViewController<ViewModel: ViewModelTypeProtocol>: MVVMCViewController {
     
     let viewModel: ViewModel
+    weak var coordinator: TodayCoordinator?
     
     required init(viewModel: ViewModel) {
         self.viewModel = viewModel

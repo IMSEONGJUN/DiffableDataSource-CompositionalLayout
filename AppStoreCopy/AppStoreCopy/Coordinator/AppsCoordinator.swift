@@ -8,7 +8,11 @@
 import UIKit
 
 class AppsCoordinator: AbstractCoordinator {
-    override func start() -> UIViewController {
-        <#code#>
+    func start() -> UIViewController {
+        let viewController = AppStoreAppsViewController<AppStoreAppsViewModel>(viewModel: .init())
+        viewController.coordinator = self
+        registerRootViewController(viewController: viewController)
+        viewController.tabBarItem = UITabBarItem(title: "Apps", image: UIImage(systemName: "square.3.stack.3d"), tag: 1)
+        return viewController
     }
 }

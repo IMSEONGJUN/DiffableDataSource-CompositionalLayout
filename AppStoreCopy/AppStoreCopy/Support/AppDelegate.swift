@@ -15,9 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        let mainCoordinator = MainCoordinator(window: window)
+        
+        let mainCoordinator = MainCoordinator()
+        window.rootViewController = mainCoordinator.start()
+        window.makeKeyAndVisible()
         self.mainCoordinator = mainCoordinator
-        mainCoordinator.start()
+        
         return true
     }
 
