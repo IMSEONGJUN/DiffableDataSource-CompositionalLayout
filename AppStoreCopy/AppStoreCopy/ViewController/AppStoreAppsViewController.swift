@@ -7,15 +7,18 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
-final class AppStoreAppsViewController<ViewModel: ViewModelTypeProtocol>: MVVMCViewController {
-    let viewModel: ViewModel
+final class AppStoreAppsViewController: MVVMCViewController<AppStoreAppsViewModel, AppsCoordinator> {
     
-    weak var coordinator: AppsCoordinator?
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout())
+        collectionView.dataSource = self
+        return collectionView
+    }()
     
     required init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(viewModel: viewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -27,8 +30,52 @@ final class AppStoreAppsViewController<ViewModel: ViewModelTypeProtocol>: MVVMCV
         view.backgroundColor = .cyan
     }
     
-    func configureViews() {
+    func compositionalLayout() -> UICollectionViewCompositionalLayout {
         
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
+                                                            heightDimension: .fractionalHeight(1)))
+        item.contentInsets = .init(top: 0, leading: 0, bottom: 16, trailing: 5)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
+                                                                         heightDimension: .absolute(200)),
+                                                       subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
+    }
+}
+
+extension AppStoreAppsViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        2
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
+    }
+}
+
+class MyCollectionViewCell: UICollectionViewCell {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.backgroundColor = .blue
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AppStoreAppsViewController: ViewConfigurable, UniDirectionalBindable {
+    func configureViews() {
+        view.addSubview(collectionView)
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     func bindInput() {

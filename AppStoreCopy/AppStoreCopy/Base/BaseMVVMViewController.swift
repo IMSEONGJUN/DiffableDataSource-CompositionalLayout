@@ -8,9 +8,6 @@
 import UIKit
 import RxSwift
 
-typealias MVVMViewController = BaseViewController & ViewConfigurable & UniDirectionalBindable & HasViewModel
-typealias MVVMCViewController = MVVMViewController & HasCoordinator
-
 protocol ViewConfigurable: AnyObject {
     func configureViews()
 }
@@ -51,4 +48,29 @@ class BaseViewController: UIViewController, HasDisposeBag {
     }
 }
 
+class MVVMCViewController<VM: ViewModelTypeProtocol, C: Coordinator>: BaseViewController, HasViewModel, HasCoordinator {
+    let viewModel: VM
+    weak var coordinator: C?
+    
+    required init(viewModel: VM) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
+class MVVMViewController<VM: ViewModelTypeProtocol>: BaseViewController, HasViewModel {
+    let viewModel: VM
+    
+    required init(viewModel: VM) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

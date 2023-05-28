@@ -8,18 +8,19 @@
 import Foundation
 import UIKit
 
-final class AppStoreTodayViewController<ViewModel: ViewModelTypeProtocol>: MVVMCViewController {
-    
-    let viewModel: ViewModel
-    weak var coordinator: TodayCoordinator?
-    
+final class AppStoreTodayViewController: MVVMCViewController<AppStoreTodayViewModel, TodayCoordinator> {
     required init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
+        super.init(viewModel: viewModel)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AppStoreTodayViewController: ViewConfigurable, UniDirectionalBindable {
+    func configureViews() {
+        
     }
     
     func bindInput() {
@@ -27,12 +28,6 @@ final class AppStoreTodayViewController<ViewModel: ViewModelTypeProtocol>: MVVMC
     }
     
     func bindOutput() {
-        
-    }
-}
-
-extension AppStoreTodayViewController {
-    func configureViews() {
         
     }
 }
