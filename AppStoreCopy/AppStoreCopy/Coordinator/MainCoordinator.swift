@@ -19,14 +19,21 @@ final class MainCoordinator: AbstractCoordinator {
     weak var appsViewController: UIViewController?
     weak var searchViewController: UIViewController?
     
+    weak var todayCoordinator: AbstractCoordinator?
+    weak var appsCoordinator: AbstractCoordinator?
+    
     func start() -> UIViewController {
         let mainTabBarController = MainTabBarController(mainCoordinator: self)
         
-        let todayNavigationController = UINavigationController(rootViewController: TodayCoordinator().start())
+        let todayCoordinator = TodayCoordinator()
+        let todayNavigationController = UINavigationController(rootViewController: todayCoordinator.start())
         self.todayViewController = todayNavigationController
+        self.todayCoordinator = todayCoordinator
         
-        let appsNavigationContoller = UINavigationController(rootViewController: AppsCoordinator().start())
+        let appsCoordinator = AppsCoordinator()
+        let appsNavigationContoller = UINavigationController(rootViewController: appsCoordinator.start())
         self.appsViewController = appsNavigationContoller
+        self.appsCoordinator = appsCoordinator
         
         mainTabBarController.viewControllers = [todayNavigationController, appsNavigationContoller]
         

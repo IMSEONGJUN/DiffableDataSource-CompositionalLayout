@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class AppStoreTodayViewController: MVVMCViewController<AppStoreTodayViewModel, TodayCoordinator> {
+final class TodayViewController: MVVMCViewController<TodayViewModel, TodayCoordinator> {
     required init(viewModel: ViewModel) {
         super.init(viewModel: viewModel)
     }
@@ -18,7 +18,7 @@ final class AppStoreTodayViewController: MVVMCViewController<AppStoreTodayViewMo
     }
 }
 
-extension AppStoreTodayViewController: ViewConfigurable, UniDirectionalBindable {
+extension TodayViewController: ViewConfigurable, UniDirectionalBindable {
     func configureViews() {
         
     }

@@ -1,13 +1,13 @@
 //
-//  AppStoreAppsViewModel.swift
+//  AppStoreTodayViewModel.swift
 //  AppStoreCopy
 //
-//  Created by SEONGJUN on 2023/05/27.
+//  Created by SEONGJUN on 2023/05/11.
 //
 
 import Foundation
 
-final class AppStoreAppsViewModel: ViewModelTypeProtocol {
+class TodayViewModel: ViewModelTypeProtocol {
     struct Input {
         
     }

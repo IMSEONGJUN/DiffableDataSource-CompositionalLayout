@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6EEC61C731D86888A586FBE3 /* Pods_AppStoreCopy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7168D0A9DC8E0BE0A73DC2C /* Pods_AppStoreCopy.framework */; };
-		CED1F5002A21F00D00DBBBA1 /* AppStoreAppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1F4FF2A21F00D00DBBBA1 /* AppStoreAppsViewModel.swift */; };
+		CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */; };
 		CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */; };
 		CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */; };
-		CEEC4C062A0D297600E55596 /* AppStoreTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C052A0D297600E55596 /* AppStoreTodayViewModel.swift */; };
+		CEEC4C062A0D297600E55596 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C052A0D297600E55596 /* TodayViewModel.swift */; };
 		CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */; };
 		CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2C992945A4F40058999A /* AppDelegate.swift */; };
 		CEFD2CA32945A4F50058999A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFD2CA22945A4F50058999A /* Assets.xcassets */; };
@@ -20,19 +20,19 @@
 		CEFD2CB02945A8310058999A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CAF2945A8310058999A /* MainTabBarController.swift */; };
 		CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB12945B0260058999A /* Coordinator.swift */; };
 		CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */; };
-		CEFD2CB62945C3150058999A /* AppStoreTodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB52945C3150058999A /* AppStoreTodayViewController.swift */; };
-		CEFD2CB82945C3340058999A /* AppStoreAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB72945C3340058999A /* AppStoreAppsViewController.swift */; };
-		CEFD2CBA2945C34B0058999A /* AppStoreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB92945C34B0058999A /* AppStoreSearchViewController.swift */; };
+		CEFD2CB62945C3150058999A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB52945C3150058999A /* TodayViewController.swift */; };
+		CEFD2CB82945C3340058999A /* AppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB72945C3340058999A /* AppsViewController.swift */; };
+		CEFD2CBA2945C34B0058999A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CB92945C34B0058999A /* SearchViewController.swift */; };
 		CEFD2CBC2945C38A0058999A /* TodayCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2CBB2945C38A0058999A /* TodayCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		76FBACC1910894688C9FC427 /* Pods-AppStoreCopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.debug.xcconfig"; sourceTree = "<group>"; };
 		B7EC1DB900770A291B85F846 /* Pods-AppStoreCopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.release.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.release.xcconfig"; sourceTree = "<group>"; };
-		CED1F4FF2A21F00D00DBBBA1 /* AppStoreAppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreAppsViewModel.swift; sourceTree = "<group>"; };
+		CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMViewController.swift; sourceTree = "<group>"; };
 		CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeProtocol.swift; sourceTree = "<group>"; };
-		CEEC4C052A0D297600E55596 /* AppStoreTodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayViewModel.swift; sourceTree = "<group>"; };
+		CEEC4C052A0D297600E55596 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCoordinator.swift; sourceTree = "<group>"; };
 		CEFD2C962945A4F40058999A /* AppStoreCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFD2C992945A4F40058999A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,9 +43,9 @@
 		CEFD2CAF2945A8310058999A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CEFD2CB12945B0260058999A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractCoordinator.swift; sourceTree = "<group>"; };
-		CEFD2CB52945C3150058999A /* AppStoreTodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTodayViewController.swift; sourceTree = "<group>"; };
-		CEFD2CB72945C3340058999A /* AppStoreAppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreAppsViewController.swift; sourceTree = "<group>"; };
-		CEFD2CB92945C34B0058999A /* AppStoreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreSearchViewController.swift; sourceTree = "<group>"; };
+		CEFD2CB52945C3150058999A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		CEFD2CB72945C3340058999A /* AppsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewController.swift; sourceTree = "<group>"; };
+		CEFD2CB92945C34B0058999A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CEFD2CBB2945C38A0058999A /* TodayCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCoordinator.swift; sourceTree = "<group>"; };
 		F7168D0A9DC8E0BE0A73DC2C /* Pods_AppStoreCopy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreCopy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,9 +119,9 @@
 		CEFD2CBD2945C3A40058999A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CEFD2CB52945C3150058999A /* AppStoreTodayViewController.swift */,
-				CEFD2CB72945C3340058999A /* AppStoreAppsViewController.swift */,
-				CEFD2CB92945C34B0058999A /* AppStoreSearchViewController.swift */,
+				CEFD2CB52945C3150058999A /* TodayViewController.swift */,
+				CEFD2CB72945C3340058999A /* AppsViewController.swift */,
+				CEFD2CB92945C34B0058999A /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -129,8 +129,8 @@
 		CEFD2CBE2945C3A60058999A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CEEC4C052A0D297600E55596 /* AppStoreTodayViewModel.swift */,
-				CED1F4FF2A21F00D00DBBBA1 /* AppStoreAppsViewModel.swift */,
+				CEEC4C052A0D297600E55596 /* TodayViewModel.swift */,
+				CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -291,8 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEEC4C062A0D297600E55596 /* AppStoreTodayViewModel.swift in Sources */,
-				CEFD2CB82945C3340058999A /* AppStoreAppsViewController.swift in Sources */,
+				CEEC4C062A0D297600E55596 /* TodayViewModel.swift in Sources */,
+				CEFD2CB82945C3340058999A /* AppsViewController.swift in Sources */,
 				CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */,
 				CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */,
 				CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */,
@@ -301,10 +301,10 @@
 				CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */,
 				CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */,
 				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
-				CED1F5002A21F00D00DBBBA1 /* AppStoreAppsViewModel.swift in Sources */,
-				CEFD2CB62945C3150058999A /* AppStoreTodayViewController.swift in Sources */,
+				CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */,
+				CEFD2CB62945C3150058999A /* TodayViewController.swift in Sources */,
 				CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */,
-				CEFD2CBA2945C34B0058999A /* AppStoreSearchViewController.swift in Sources */,
+				CEFD2CBA2945C34B0058999A /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

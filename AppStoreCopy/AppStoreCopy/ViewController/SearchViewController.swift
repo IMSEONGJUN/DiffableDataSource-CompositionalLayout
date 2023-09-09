@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-class AppStoreSearchViewController: UIViewController {
+class SearchViewController: UIViewController {
     
 }

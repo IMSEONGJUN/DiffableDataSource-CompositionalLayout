@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-final class AppStoreAppsViewController: MVVMCViewController<AppStoreAppsViewModel, AppsCoordinator> {
+final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinator> {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout())
@@ -45,7 +45,7 @@ final class AppStoreAppsViewController: MVVMCViewController<AppStoreAppsViewMode
     }
 }
 
-extension AppStoreAppsViewController: UICollectionViewDataSource {
+extension AppsViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         2
     }
@@ -69,7 +69,7 @@ class MyCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension AppStoreAppsViewController: ViewConfigurable, UniDirectionalBindable {
+extension AppsViewController: ViewConfigurable, UniDirectionalBindable {
     func configureViews() {
         view.addSubview(collectionView)
         collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
