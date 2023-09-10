@@ -9,15 +9,26 @@ import Foundation
 import UIKit
 import SnapKit
 
+@available(iOS 16.0.0, *)
+protocol CollectionViewUsing<Section, Item> {
+    associatedtype Section: Hashable
+    associatedtype Item: Hashable
+    
+    var collectionView: DiffableDataSourceCollectionView<Section, Item> { get }
+    func update(sectionModels: [any SectionModeling<Section, Item>])
+}
+
 final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinator> {
+    typealias AppsCollectionView = DiffableDataSourceCollectionView
     
-    private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout())
-        collectionView.dataSource = self
-        return collectionView
-    }()
+    private lazy var collectionView = AppsCollectionView<AppSection, AppItem>() { collectionView, indexPath, item in
+        return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
+    }
     
-    required init(viewModel: ViewModel) {
+    private let collectionViewLayoutProvider: any CollectionViewLayoutProvidable<AppSection, AppItem>
+    
+    init(viewModel: ViewModel, collectionViewlayoutProvider: any CollectionViewLayoutProvidable<AppSection, AppItem>) {
+        self.collectionViewLayoutProvider = collectionViewlayoutProvider
         super.init(viewModel: viewModel)
     }
     
@@ -27,45 +38,22 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
-    }
-    
-    func compositionalLayout() -> UICollectionViewCompositionalLayout {
+        setCollectionViewLayout()
         
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
-                                                            heightDimension: .fractionalHeight(1)))
-        item.contentInsets = .init(top: 0, leading: 0, bottom: 16, trailing: 5)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                         heightDimension: .absolute(200)),
-                                                       subitems: [item])
-        
-        let section = NSCollectionLayoutSection(group: group)
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
-    }
-}
-
-extension AppsViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        2
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        8
+        // Temporary dummy model for test
+        let appSectionModel = AppSectionModel(section: .normal,
+                                              items: [AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem()])
+        update(sectionModels: [appSectionModel])
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
-    }
-}
-
-class MyCollectionViewCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.backgroundColor = .blue
+    private func setCollectionViewLayout() {
+        if let dataSource = collectionView.updatableDataSource {
+            collectionView.collectionViewLayout = collectionViewLayoutProvider.createLayout(dataSource: dataSource)
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    private func update(sectionModels: [AppSectionModel]) {
+        self.collectionView.apply(sectionModels: sectionModels, animatingDifferences: true)
     }
 }
 

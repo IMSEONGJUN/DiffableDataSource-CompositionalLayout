@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6EEC61C731D86888A586FBE3 /* Pods_AppStoreCopy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7168D0A9DC8E0BE0A73DC2C /* Pods_AppStoreCopy.framework */; };
+		CE1CE0742AAC87A5009573EF /* DiffableDataSourceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0732AAC87A5009573EF /* DiffableDataSourceCollectionView.swift */; };
+		CE1CE0772AAC8C2B009573EF /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0762AAC8C2B009573EF /* AppSection.swift */; };
+		CE1CE0792AAC8E29009573EF /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0782AAC8E29009573EF /* AppItem.swift */; };
+		CE1CE07B2AAC91F0009573EF /* PageableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE07A2AAC91F0009573EF /* PageableResponse.swift */; };
+		CE634BAA2AAD6E4800FE61FE /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BA92AAD6E4800FE61FE /* MyCollectionViewCell.swift */; };
+		CE634BAD2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BAC2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift */; };
+		CE634BAF2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BAE2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift */; };
+		CE634BB12AAD8CB700FE61FE /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB02AAD8CB700FE61FE /* ApiProvider.swift */; };
 		CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */; };
 		CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */; };
 		CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */; };
@@ -29,6 +37,14 @@
 /* Begin PBXFileReference section */
 		76FBACC1910894688C9FC427 /* Pods-AppStoreCopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.debug.xcconfig"; sourceTree = "<group>"; };
 		B7EC1DB900770A291B85F846 /* Pods-AppStoreCopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.release.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.release.xcconfig"; sourceTree = "<group>"; };
+		CE1CE0732AAC87A5009573EF /* DiffableDataSourceCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionView.swift; sourceTree = "<group>"; };
+		CE1CE0762AAC8C2B009573EF /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
+		CE1CE0782AAC8E29009573EF /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
+		CE1CE07A2AAC91F0009573EF /* PageableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageableResponse.swift; sourceTree = "<group>"; };
+		CE634BA92AAD6E4800FE61FE /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE634BAC2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCollectionViewLayoutProvider.swift; sourceTree = "<group>"; };
+		CE634BAE2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutProvidable.swift; sourceTree = "<group>"; };
+		CE634BB02AAD8CB700FE61FE /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMViewController.swift; sourceTree = "<group>"; };
 		CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeProtocol.swift; sourceTree = "<group>"; };
@@ -71,6 +87,47 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE1CE0722AAC8784009573EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE1CE0732AAC87A5009573EF /* DiffableDataSourceCollectionView.swift */,
+				CE634BA92AAD6E4800FE61FE /* MyCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE634BAB2AAD6F6000FE61FE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE634BAC2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift */,
+				CE634BAE2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE634BB22AAD8CD700FE61FE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CE634BB02AAD8CB700FE61FE /* ApiProvider.swift */,
+				CE634BB32AAD8CF300FE61FE /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE634BB32AAD8CF300FE61FE /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		CE634BB42AAD8D2000FE61FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CEEC4C002A0D0FF900E55596 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,16 +159,17 @@
 		CEFD2C982945A4F40058999A /* AppStoreCopy */ = {
 			isa = PBXGroup;
 			children = (
+				CE634BB42AAD8D2000FE61FE /* Extensions */,
+				CEFD2C992945A4F40058999A /* AppDelegate.swift */,
+				CE634BAB2AAD6F6000FE61FE /* Utils */,
 				CEFD2CC32945C3D80058999A /* Support */,
 				CEFD2CC12945C3BF0058999A /* Service */,
 				CEFD2CC02945C3BC0058999A /* Model */,
 				CEEC4C002A0D0FF900E55596 /* Base */,
 				CEFD2CBF2945C3A90058999A /* Coordinator */,
+				CE1CE0722AAC8784009573EF /* View */,
 				CEFD2CBE2945C3A60058999A /* ViewModel */,
 				CEFD2CBD2945C3A40058999A /* ViewController */,
-				CEFD2CA22945A4F50058999A /* Assets.xcassets */,
-				CEFD2CA42945A4F50058999A /* LaunchScreen.storyboard */,
-				CEFD2CA72945A4F50058999A /* Info.plist */,
 			);
 			path = AppStoreCopy;
 			sourceTree = "<group>";
@@ -150,6 +208,9 @@
 		CEFD2CC02945C3BC0058999A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE1CE0762AAC8C2B009573EF /* AppSection.swift */,
+				CE1CE07A2AAC91F0009573EF /* PageableResponse.swift */,
+				CE1CE0782AAC8E29009573EF /* AppItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +218,7 @@
 		CEFD2CC12945C3BF0058999A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				CE634BB22AAD8CD700FE61FE /* Network */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -164,7 +226,9 @@
 		CEFD2CC32945C3D80058999A /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				CEFD2C992945A4F40058999A /* AppDelegate.swift */,
+				CEFD2CA22945A4F50058999A /* Assets.xcassets */,
+				CEFD2CA42945A4F50058999A /* LaunchScreen.storyboard */,
+				CEFD2CA72945A4F50058999A /* Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -293,15 +357,23 @@
 			files = (
 				CEEC4C062A0D297600E55596 /* TodayViewModel.swift in Sources */,
 				CEFD2CB82945C3340058999A /* AppsViewController.swift in Sources */,
+				CE634BAD2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift in Sources */,
+				CE634BB12AAD8CB700FE61FE /* ApiProvider.swift in Sources */,
 				CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */,
 				CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */,
 				CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */,
 				CEFD2CB02945A8310058999A /* MainTabBarController.swift in Sources */,
+				CE634BAF2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift in Sources */,
 				CEFD2CBC2945C38A0058999A /* TodayCoordinator.swift in Sources */,
+				CE1CE0792AAC8E29009573EF /* AppItem.swift in Sources */,
 				CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */,
+				CE1CE07B2AAC91F0009573EF /* PageableResponse.swift in Sources */,
+				CE1CE0742AAC87A5009573EF /* DiffableDataSourceCollectionView.swift in Sources */,
 				CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */,
 				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
+				CE1CE0772AAC8C2B009573EF /* AppSection.swift in Sources */,
 				CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */,
+				CE634BAA2AAD6E4800FE61FE /* MyCollectionViewCell.swift in Sources */,
 				CEFD2CB62945C3150058999A /* TodayViewController.swift in Sources */,
 				CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */,
 				CEFD2CBA2945C34B0058999A /* SearchViewController.swift in Sources */,
@@ -448,7 +520,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ADHC8G6NHC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppStoreCopy/Info.plist;
+				INFOPLIST_FILE = AppStoreCopy/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -476,7 +548,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ADHC8G6NHC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AppStoreCopy/Info.plist;
+				INFOPLIST_FILE = AppStoreCopy/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

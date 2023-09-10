@@ -11,9 +11,13 @@ final class TodayCoordinator: AbstractCoordinator {
     func start() -> UIViewController {
         let todayViewController = TodayViewController(viewModel: .init())
         todayViewController.coordinator = self
-        todayViewController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "note"), tag: 0)
-        registerRootViewController(viewController: todayViewController)
+        todayViewController.navigationItem.title = "Today"
+        
+        let todayNavigationController = UINavigationController(rootViewController: todayViewController)
+        todayNavigationController.navigationBar.prefersLargeTitles = true
+        todayNavigationController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "note"), tag: 0)
+        registerRootViewController(viewController: todayNavigationController)
 
-        return todayViewController
+        return todayNavigationController
     }
 }

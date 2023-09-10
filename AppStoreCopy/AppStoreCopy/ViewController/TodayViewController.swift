@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class TodayViewController: MVVMCViewController<TodayViewModel, TodayCoordinator> {
-    required init(viewModel: ViewModel) {
+    override init(viewModel: ViewModel) {
         super.init(viewModel: viewModel)
     }
     

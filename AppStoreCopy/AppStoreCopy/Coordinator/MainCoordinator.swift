@@ -26,12 +26,12 @@ final class MainCoordinator: AbstractCoordinator {
         let mainTabBarController = MainTabBarController(mainCoordinator: self)
         
         let todayCoordinator = TodayCoordinator()
-        let todayNavigationController = UINavigationController(rootViewController: todayCoordinator.start())
+        let todayNavigationController = todayCoordinator.start()
         self.todayViewController = todayNavigationController
         self.todayCoordinator = todayCoordinator
         
         let appsCoordinator = AppsCoordinator()
-        let appsNavigationContoller = UINavigationController(rootViewController: appsCoordinator.start())
+        let appsNavigationContoller = appsCoordinator.start()
         self.appsViewController = appsNavigationContoller
         self.appsCoordinator = appsCoordinator
         

@@ -21,6 +21,7 @@ extension Coordinator {
     func registerRootViewController(viewController: UIViewController) {
         self.rootViewController = viewController
         
+        // rootViewController가 deallocated 될 때 해당 뷰컨의 coordinator도 함께 deinit되도록 strong capure.
         rootViewController?.rx.deallocated
             .subscribe(onNext: {
                 self.noOp()

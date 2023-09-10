@@ -24,8 +24,6 @@ protocol HasDisposeBag: AnyObject {
 protocol HasViewModel: AnyObject {
     associatedtype ViewModel: ViewModelTypeProtocol
     var viewModel: ViewModel { get }
-    
-    init(viewModel: ViewModel)
 }
 
 protocol HasCoordinator {
@@ -52,7 +50,7 @@ class MVVMCViewController<VM: ViewModelTypeProtocol, C: Coordinator>: BaseViewCo
     let viewModel: VM
     weak var coordinator: C?
     
-    required init(viewModel: VM) {
+    init(viewModel: VM) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

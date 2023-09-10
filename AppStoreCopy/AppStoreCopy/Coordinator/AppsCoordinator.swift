@@ -9,10 +9,15 @@ import UIKit
 
 class AppsCoordinator: AbstractCoordinator {
     func start() -> UIViewController {
-        let viewController = AppsViewController(viewModel: .init())
-        viewController.coordinator = self
-        registerRootViewController(viewController: viewController)
-        viewController.tabBarItem = UITabBarItem(title: "Apps", image: UIImage(systemName: "square.3.stack.3d"), tag: 1)
-        return viewController
+        let appsViewController = AppsViewController(viewModel: .init(),
+                                                    collectionViewlayoutProvider: AppsCollectionViewLayoutProvider())
+        appsViewController.coordinator = self
+        appsViewController.navigationItem.title = "Apps"
+        appsViewController.tabBarItem = UITabBarItem(title: "Apps", image: UIImage(systemName: "square.3.stack.3d"), tag: 1)
+        
+        let appsNavigationController = UINavigationController(rootViewController: appsViewController)
+        appsNavigationController.navigationBar.prefersLargeTitles = true
+        registerRootViewController(viewController: appsNavigationController)
+        return appsNavigationController
     }
 }
