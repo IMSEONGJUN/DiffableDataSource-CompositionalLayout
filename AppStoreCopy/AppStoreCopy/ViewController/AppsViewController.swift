@@ -9,25 +9,18 @@ import Foundation
 import UIKit
 import SnapKit
 
-@available(iOS 16.0.0, *)
-protocol CollectionViewUsing<Section, Item> {
-    associatedtype Section: Hashable
-    associatedtype Item: Hashable
-    
-    var collectionView: DiffableDataSourceCollectionView<Section, Item> { get }
-    func update(sectionModels: [any SectionModeling<Section, Item>])
-}
-
 final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinator> {
     typealias AppsCollectionView = DiffableDataSourceCollectionView
+    typealias Section = AppSection
+    typealias Item = AppItem
     
-    private lazy var collectionView = AppsCollectionView<AppSection, AppItem>() { collectionView, indexPath, item in
+    lazy var collectionView = AppsCollectionView<Section, Item>() { collectionView, indexPath, item in
         return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
     }
     
-    private let collectionViewLayoutProvider: any CollectionViewLayoutProvidable<AppSection, AppItem>
+    let collectionViewLayoutProvider: any CollectionViewLayoutProvidable<Section, Item>
     
-    init(viewModel: ViewModel, collectionViewlayoutProvider: any CollectionViewLayoutProvidable<AppSection, AppItem>) {
+    init(viewModel: ViewModel, collectionViewlayoutProvider: some CollectionViewLayoutProvidable<Section, Item>) {
         self.collectionViewLayoutProvider = collectionViewlayoutProvider
         super.init(viewModel: viewModel)
     }
@@ -42,17 +35,19 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
         
         // Temporary dummy model for test
         let appSectionModel = AppSectionModel(section: .normal,
-                                              items: [AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem()])
+                                              items: [AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem(),AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem()])
         update(sectionModels: [appSectionModel])
     }
-    
-    private func setCollectionViewLayout() {
+}
+
+extension AppsViewController: DiffableDataSourceCollectionViewUsing {
+    func setCollectionViewLayout() {
         if let dataSource = collectionView.updatableDataSource {
             collectionView.collectionViewLayout = collectionViewLayoutProvider.createLayout(dataSource: dataSource)
         }
     }
     
-    private func update(sectionModels: [AppSectionModel]) {
+    func update(sectionModels: [some SectionModeling<Section, Item>]) {
         self.collectionView.apply(sectionModels: sectionModels, animatingDifferences: true)
     }
 }
