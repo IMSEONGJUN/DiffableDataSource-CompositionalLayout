@@ -17,6 +17,8 @@
 		CE634BAF2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BAE2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift */; };
 		CE634BB12AAD8CB700FE61FE /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB02AAD8CB700FE61FE /* ApiProvider.swift */; };
 		CE634BB62AAD99F300FE61FE /* DiffableDataSourceCollectionViewUsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB52AAD99F300FE61FE /* DiffableDataSourceCollectionViewUsing.swift */; };
+		CE634BB82AB09F3C00FE61FE /* SectionModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB72AB09F3C00FE61FE /* SectionModeling.swift */; };
+		CE634BBA2AB09F5700FE61FE /* AppSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB92AB09F5700FE61FE /* AppSectionModel.swift */; };
 		CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */; };
 		CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */; };
 		CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */; };
@@ -47,6 +49,8 @@
 		CE634BAE2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewLayoutProvidable.swift; sourceTree = "<group>"; };
 		CE634BB02AAD8CB700FE61FE /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
 		CE634BB52AAD99F300FE61FE /* DiffableDataSourceCollectionViewUsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionViewUsing.swift; sourceTree = "<group>"; };
+		CE634BB72AB09F3C00FE61FE /* SectionModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModeling.swift; sourceTree = "<group>"; };
+		CE634BB92AB09F5700FE61FE /* AppSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionModel.swift; sourceTree = "<group>"; };
 		CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMViewController.swift; sourceTree = "<group>"; };
 		CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeProtocol.swift; sourceTree = "<group>"; };
@@ -130,6 +134,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE634BBB2AB09F6E00FE61FE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CE634BB72AB09F3C00FE61FE /* SectionModeling.swift */,
+				CE1CE07A2AAC91F0009573EF /* PageableResponse.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CE634BBC2AB09F8700FE61FE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE1CE0762AAC8C2B009573EF /* AppSection.swift */,
+				CE1CE0782AAC8E29009573EF /* AppItem.swift */,
+				CE634BB92AB09F5700FE61FE /* AppSectionModel.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		CEEC4C002A0D0FF900E55596 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,9 +234,8 @@
 		CEFD2CC02945C3BC0058999A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE1CE0762AAC8C2B009573EF /* AppSection.swift */,
-				CE1CE07A2AAC91F0009573EF /* PageableResponse.swift */,
-				CE1CE0782AAC8E29009573EF /* AppItem.swift */,
+				CE634BBB2AB09F6E00FE61FE /* Base */,
+				CE634BBC2AB09F8700FE61FE /* App */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,9 +381,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEEC4C062A0D297600E55596 /* TodayViewModel.swift in Sources */,
+				CE634BBA2AB09F5700FE61FE /* AppSectionModel.swift in Sources */,
 				CEFD2CB82945C3340058999A /* AppsViewController.swift in Sources */,
 				CE634BAD2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift in Sources */,
 				CE634BB12AAD8CB700FE61FE /* ApiProvider.swift in Sources */,
+				CE634BB82AB09F3C00FE61FE /* SectionModeling.swift in Sources */,
 				CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */,
 				CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */,
 				CEFD2CB22945B0260058999A /* Coordinator.swift in Sources */,

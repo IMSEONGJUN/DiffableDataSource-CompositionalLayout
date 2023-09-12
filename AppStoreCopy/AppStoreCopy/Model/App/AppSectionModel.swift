@@ -1,17 +1,11 @@
 //
-//  AppsSectionModel.swift
+//  AppSectionModel.swift
 //  AppStoreCopy
 //
-//  Created by SEONGJUN on 2023/09/09.
+//  Created by SEONGJUN on 2023/09/12.
 //
 
 import Foundation
-
-enum AppSection: Codable {
-    case featured
-    case normal
-    case mini
-}
 
 struct AppSectionModel: SectionModeling, Codable {
     var section: AppSection
@@ -29,12 +23,4 @@ struct AppSectionModel: SectionModeling, Codable {
         default: return false
         }
     }
-}
-
-protocol SectionModeling<Section, Item>: Hashable {
-    associatedtype Section: Hashable
-    associatedtype Item: Hashable
-    
-    var section: Section { get }
-    var items: [Item] { get }
 }

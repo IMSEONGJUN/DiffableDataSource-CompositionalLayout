@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol DiffableDataSourceCollectionViewUsing<Section, Item> {
+protocol DiffableDataSourceCollectionViewUsing {
     associatedtype Section: Hashable
     associatedtype Item: Hashable
     
