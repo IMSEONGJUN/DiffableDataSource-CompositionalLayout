@@ -8,13 +8,15 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinator> {
+final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinator>, DiffableDataSourceCollectionViewUsing {
     typealias AppsCollectionView = DiffableDataSourceCollectionView
     typealias Section = AppSection
     typealias Item = AppItem
     
-    lazy var collectionView = AppsCollectionView<Section, Item>() { collectionView, indexPath, item in
+    let collectionView = AppsCollectionView<Section, Item>() { collectionView, indexPath, item in
         return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
     }
     
@@ -36,19 +38,8 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
         // Temporary dummy model for test
         let appSectionModel = AppSectionModel(section: .normal,
                                               items: [AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem(),AppItem(), AppItem(), AppItem(),AppItem(),AppItem(),AppItem()])
-        update(sectionModels: [appSectionModel])
-    }
-}
-
-extension AppsViewController: DiffableDataSourceCollectionViewUsing {
-    func setCollectionViewLayout() {
-        if let dataSource = collectionView.updatableDataSource {
-            collectionView.collectionViewLayout = collectionViewLayoutProvider.createLayout(dataSource: dataSource)
-        }
-    }
-    
-    func update(sectionModels: [some SectionModeling<Section, Item>]) {
-        self.collectionView.apply(sectionModels: sectionModels, animatingDifferences: true)
+        
+        update(sectionModels: [appSectionModel], animatingDifferences: true)
     }
 }
 

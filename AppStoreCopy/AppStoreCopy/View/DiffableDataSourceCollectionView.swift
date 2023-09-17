@@ -21,15 +21,13 @@ final class DiffableDataSourceCollectionView<Section: Hashable, Item: Hashable>:
         fatalError("init(coder:) has not been implemented")
     }
     
-    func apply<S: SectionModeling>(sectionModels: [S],
-                                   animatingDifferences: Bool) where S.Section == Section, S.Item == Item {
+    func apply(sectionModels: [some SectionModeling<Section, Item>], animatingDifferences: Bool) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         sectionModels.forEach {
             snapshot.appendSections([$0.section])
             snapshot.appendItems($0.items)
         }
-        DispatchQueue.main.async {
-            self.updatableDataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
-        }
+        
+        self.updatableDataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
     }
 }
