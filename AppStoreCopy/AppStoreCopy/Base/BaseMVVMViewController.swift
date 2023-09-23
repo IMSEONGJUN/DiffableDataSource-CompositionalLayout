@@ -22,7 +22,7 @@ protocol HasDisposeBag: AnyObject {
 }
 
 protocol HasViewModel: AnyObject {
-    associatedtype ViewModel: ViewModelTypeProtocol
+    associatedtype ViewModel: ViewModelType
     var viewModel: ViewModel { get }
 }
 
@@ -46,7 +46,7 @@ class BaseViewController: UIViewController, HasDisposeBag {
     }
 }
 
-class MVVMCViewController<VM: ViewModelTypeProtocol, C: Coordinator>: BaseViewController, HasViewModel, HasCoordinator {
+class MVVMCViewController<VM: ViewModelType, C: Coordinator>: BaseViewController, HasViewModel, HasCoordinator {
     let viewModel: VM
     weak var coordinator: C?
     
@@ -60,7 +60,7 @@ class MVVMCViewController<VM: ViewModelTypeProtocol, C: Coordinator>: BaseViewCo
     }
 }
 
-class MVVMViewController<VM: ViewModelTypeProtocol>: BaseViewController, HasViewModel {
+class MVVMViewController<VM: ViewModelType>: BaseViewController, HasViewModel {
     let viewModel: VM
     
     required init(viewModel: VM) {

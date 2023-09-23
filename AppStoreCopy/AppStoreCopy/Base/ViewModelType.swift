@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewModelTypeProtocol {
+protocol ViewModelType {
     associatedtype Input
     associatedtype Output
     

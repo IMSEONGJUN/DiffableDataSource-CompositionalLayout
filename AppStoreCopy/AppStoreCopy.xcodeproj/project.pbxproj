@@ -21,7 +21,7 @@
 		CE634BBA2AB09F5700FE61FE /* AppSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE634BB92AB09F5700FE61FE /* AppSectionModel.swift */; };
 		CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */; };
 		CEEC4C022A0D11BA00E55596 /* BaseMVVMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */; };
-		CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */; };
+		CEEC4C042A0D137000E55596 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C032A0D137000E55596 /* ViewModelType.swift */; };
 		CEEC4C062A0D297600E55596 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C052A0D297600E55596 /* TodayViewModel.swift */; };
 		CEEC4C082A0D2F0F00E55596 /* AppsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */; };
 		CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFD2C992945A4F40058999A /* AppDelegate.swift */; };
@@ -53,7 +53,7 @@
 		CE634BB92AB09F5700FE61FE /* AppSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSectionModel.swift; sourceTree = "<group>"; };
 		CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMViewController.swift; sourceTree = "<group>"; };
-		CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeProtocol.swift; sourceTree = "<group>"; };
+		CEEC4C032A0D137000E55596 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		CEEC4C052A0D297600E55596 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		CEEC4C072A0D2F0F00E55596 /* AppsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsCoordinator.swift; sourceTree = "<group>"; };
 		CEFD2C962945A4F40058999A /* AppStoreCopy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreCopy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +158,7 @@
 			children = (
 				CEFD2CAF2945A8310058999A /* MainTabBarController.swift */,
 				CEEC4C012A0D11B900E55596 /* BaseMVVMViewController.swift */,
-				CEEC4C032A0D137000E55596 /* ViewModelTypeProtocol.swift */,
+				CEEC4C032A0D137000E55596 /* ViewModelType.swift */,
 				CE634BB52AAD99F300FE61FE /* DiffableDataSourceCollectionViewUsing.swift */,
 			);
 			path = Base;
@@ -396,7 +396,7 @@
 				CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */,
 				CE1CE07B2AAC91F0009573EF /* PageableResponse.swift in Sources */,
 				CE1CE0742AAC87A5009573EF /* DiffableDataSourceCollectionView.swift in Sources */,
-				CEEC4C042A0D137000E55596 /* ViewModelTypeProtocol.swift in Sources */,
+				CEEC4C042A0D137000E55596 /* ViewModelType.swift in Sources */,
 				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
 				CE1CE0772AAC8C2B009573EF /* AppSection.swift in Sources */,
 				CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */,

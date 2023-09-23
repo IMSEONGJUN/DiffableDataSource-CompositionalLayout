@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class AppsViewModel: ViewModelTypeProtocol {
+final class AppsViewModel: ViewModelType {
     struct Input {
         
     }
