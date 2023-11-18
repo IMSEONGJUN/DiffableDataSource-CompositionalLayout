@@ -8,7 +8,7 @@
 import UIKit
 
 class AppsCollectionViewLayoutProvider: CollectionViewLayoutProvidable {
-    func createLayout(dataSource: UICollectionViewDiffableDataSource<AppSection, AppItem>) -> UICollectionViewLayout {
+    func createLayout(dataSource: UICollectionViewDiffableDataSource<AppSection, AppItem>?) -> UICollectionViewLayout {
         let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(0.25),
                                                             heightDimension: .fractionalHeight(1)))
         item.contentInsets = .init(top: 0, leading: 0, bottom: 16, trailing: 5)
@@ -21,3 +21,4 @@ class AppsCollectionViewLayoutProvider: CollectionViewLayoutProvidable {
         return layout
     }
 }
+

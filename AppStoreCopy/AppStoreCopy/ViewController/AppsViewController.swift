@@ -16,24 +16,27 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
     typealias Section = AppSection
     typealias Item = AppItem
     
-    let collectionView = AppsCollectionView<Section, Item>() { collectionView, indexPath, item in
+    lazy var collectionView = AppsCollectionView<Section, Item>(layoutProvider: collectionViewLayoutProvider) { collectionView, indexPath, item in
         return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyCollectionViewCell.self), for: indexPath) as! MyCollectionViewCell
     }
     
     let collectionViewLayoutProvider: any CollectionViewLayoutProvidable<Section, Item>
     
-    init(viewModel: ViewModel, collectionViewlayoutProvider: some CollectionViewLayoutProvidable<Section, Item>) {
+    init(viewModel: AppsViewModel, collectionViewlayoutProvider: some CollectionViewLayoutProvidable<Section, Item>) {
         self.collectionViewLayoutProvider = collectionViewlayoutProvider
         super.init(viewModel: viewModel)
     }
-    
+
+    deinit {
+        print("deinit AppsViewController")
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollectionViewLayout()
         
         // Temporary dummy model for test
         let appSectionModel = AppSectionModel(section: .normal,
@@ -41,12 +44,15 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
         
         update(sectionModels: [appSectionModel], animatingDifferences: true)
     }
+
+    func setCollectionView() {
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
+    }
 }
 
 extension AppsViewController: ViewConfigurable, UniDirectionalBindable {
     func configureViews() {
         view.addSubview(collectionView)
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

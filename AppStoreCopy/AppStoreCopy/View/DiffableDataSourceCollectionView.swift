@@ -8,15 +8,20 @@
 import UIKit
 
 final class DiffableDataSourceCollectionView<Section: Hashable, Item: Hashable>: UICollectionView {
-    private(set) var updatableDataSource: UICollectionViewDiffableDataSource<Section, Item>?
+    private var diffableDataSource: UICollectionViewDiffableDataSource<Section, Item>?
     
     init(frame: CGRect = .zero,
-         layout: UICollectionViewLayout = UICollectionViewLayout(),
+         layoutProvider: some CollectionViewLayoutProvidable<Section, Item>,
          cellProvider: @escaping UICollectionViewDiffableDataSource<Section, Item>.CellProvider) {
-        super.init(frame: frame, collectionViewLayout: layout)
-        self.updatableDataSource = UICollectionViewDiffableDataSource(collectionView: self, cellProvider: cellProvider)
+        super.init(frame: frame, collectionViewLayout: UICollectionViewLayout())
+        self.diffableDataSource = UICollectionViewDiffableDataSource(collectionView: self, cellProvider: cellProvider)
+        collectionViewLayout = layoutProvider.createLayout(dataSource: diffableDataSource)
     }
-    
+
+    deinit {
+        print("deinit DiffableDataSourceCollectionView")
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,6 +33,10 @@ final class DiffableDataSourceCollectionView<Section: Hashable, Item: Hashable>:
             snapshot.appendItems($0.items)
         }
         
-        self.updatableDataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
+        self.diffableDataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+
+    func item(for indexPath: IndexPath) -> Item? {
+        return diffableDataSource?.itemIdentifier(for: indexPath)
     }
 }

@@ -11,5 +11,5 @@ protocol CollectionViewLayoutProvidable<Section, Item> {
     associatedtype Section: Hashable
     associatedtype Item: Hashable
     
-    func createLayout(dataSource: UICollectionViewDiffableDataSource<Section, Item>) -> UICollectionViewLayout
+    func createLayout(dataSource: UICollectionViewDiffableDataSource<Section, Item>?) -> UICollectionViewLayout
 }

@@ -9,8 +9,6 @@ target 'AppStoreCopy' do
  pod 'RxCocoa'
  pod 'SnapKit'
  pod 'Moya'
- pod 'Kingfisher', '~> 7.0'
-
   # Pods for AppStoreCopy
 
 end

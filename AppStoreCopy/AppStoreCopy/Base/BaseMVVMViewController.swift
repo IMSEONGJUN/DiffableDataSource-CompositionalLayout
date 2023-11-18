@@ -46,11 +46,11 @@ class BaseViewController: UIViewController, HasDisposeBag {
     }
 }
 
-class MVVMCViewController<VM: ViewModelType, C: Coordinator>: BaseViewController, HasViewModel, HasCoordinator {
-    let viewModel: VM
+class MVVMCViewController<ViewModel: ViewModelType, C: Coordinator>: BaseViewController, HasViewModel, HasCoordinator {
+    let viewModel: ViewModel
     weak var coordinator: C?
     
-    init(viewModel: VM) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
