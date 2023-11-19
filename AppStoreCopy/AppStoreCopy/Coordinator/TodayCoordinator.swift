@@ -15,7 +15,7 @@ final class TodayCoordinator: AbstractCoordinator {
         
         let todayNavigationController = UINavigationController(rootViewController: todayViewController)
         todayNavigationController.navigationBar.prefersLargeTitles = true
-        todayNavigationController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "note"), tag: 0)
+        todayNavigationController.tabBarItem = UITabBarItem(title: "Today", image: UIImage(systemName: "note"), tag: 2)
         registerRootViewController(viewController: todayNavigationController)
 
         return todayNavigationController

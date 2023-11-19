@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6EEC61C731D86888A586FBE3 /* Pods_AppStoreCopy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7168D0A9DC8E0BE0A73DC2C /* Pods_AppStoreCopy.framework */; };
+		CE1B03552B08D741002EDACA /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B03542B08D741002EDACA /* SearchViewModel.swift */; };
+		CE1B03572B08D762002EDACA /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B03562B08D762002EDACA /* SearchCoordinator.swift */; };
+		CE1B03592B09BA75002EDACA /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B03582B09BA75002EDACA /* UIViewController+.swift */; };
+		CE1B035B2B09BED1002EDACA /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B035A2B09BED1002EDACA /* SearchAPI.swift */; };
 		CE1CE0742AAC87A5009573EF /* DiffableDataSourceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0732AAC87A5009573EF /* DiffableDataSourceCollectionView.swift */; };
 		CE1CE0772AAC8C2B009573EF /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0762AAC8C2B009573EF /* AppSection.swift */; };
 		CE1CE0792AAC8E29009573EF /* AppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1CE0782AAC8E29009573EF /* AppItem.swift */; };
@@ -40,6 +44,10 @@
 /* Begin PBXFileReference section */
 		76FBACC1910894688C9FC427 /* Pods-AppStoreCopy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.debug.xcconfig"; sourceTree = "<group>"; };
 		B7EC1DB900770A291B85F846 /* Pods-AppStoreCopy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreCopy.release.xcconfig"; path = "Target Support Files/Pods-AppStoreCopy/Pods-AppStoreCopy.release.xcconfig"; sourceTree = "<group>"; };
+		CE1B03542B08D741002EDACA /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CE1B03562B08D762002EDACA /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
+		CE1B03582B09BA75002EDACA /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		CE1B035A2B09BED1002EDACA /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		CE1CE0732AAC87A5009573EF /* DiffableDataSourceCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionView.swift; sourceTree = "<group>"; };
 		CE1CE0762AAC8C2B009573EF /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
 		CE1CE0782AAC8E29009573EF /* AppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppItem.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 		CE634BB32AAD8CF300FE61FE /* API */ = {
 			isa = PBXGroup;
 			children = (
+				CE1B035A2B09BED1002EDACA /* SearchAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -130,6 +139,7 @@
 		CE634BB42AAD8D2000FE61FE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE1B03582B09BA75002EDACA /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -215,6 +225,7 @@
 			children = (
 				CEEC4C052A0D297600E55596 /* TodayViewModel.swift */,
 				CED1F4FF2A21F00D00DBBBA1 /* AppsViewModel.swift */,
+				CE1B03542B08D741002EDACA /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 				CEFD2CBB2945C38A0058999A /* TodayCoordinator.swift */,
 				CEFD2CB32945B0680058999A /* AbstractCoordinator.swift */,
 				CEFD2CB12945B0260058999A /* Coordinator.swift */,
+				CE1B03562B08D762002EDACA /* SearchCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -384,6 +396,8 @@
 				CE634BBA2AB09F5700FE61FE /* AppSectionModel.swift in Sources */,
 				CEFD2CB82945C3340058999A /* AppsViewController.swift in Sources */,
 				CE634BAD2AAD6F8F00FE61FE /* AppsCollectionViewLayoutProvider.swift in Sources */,
+				CE1B03572B08D762002EDACA /* SearchCoordinator.swift in Sources */,
+				CE1B035B2B09BED1002EDACA /* SearchAPI.swift in Sources */,
 				CE634BB12AAD8CB700FE61FE /* ApiProvider.swift in Sources */,
 				CE634BB82AB09F3C00FE61FE /* SectionModeling.swift in Sources */,
 				CEFD2CAE2945A7A00058999A /* MainCoordinator.swift in Sources */,
@@ -393,11 +407,13 @@
 				CE634BAF2AAD706500FE61FE /* CollectionViewLayoutProvidable.swift in Sources */,
 				CEFD2CBC2945C38A0058999A /* TodayCoordinator.swift in Sources */,
 				CE1CE0792AAC8E29009573EF /* AppItem.swift in Sources */,
+				CE1B03592B09BA75002EDACA /* UIViewController+.swift in Sources */,
 				CEFD2C9A2945A4F40058999A /* AppDelegate.swift in Sources */,
 				CE1CE07B2AAC91F0009573EF /* PageableResponse.swift in Sources */,
 				CE1CE0742AAC87A5009573EF /* DiffableDataSourceCollectionView.swift in Sources */,
 				CEEC4C042A0D137000E55596 /* ViewModelType.swift in Sources */,
 				CEFD2CB42945B0680058999A /* AbstractCoordinator.swift in Sources */,
+				CE1B03552B08D741002EDACA /* SearchViewModel.swift in Sources */,
 				CE1CE0772AAC8C2B009573EF /* AppSection.swift in Sources */,
 				CED1F5002A21F00D00DBBBA1 /* AppsViewModel.swift in Sources */,
 				CE634BAA2AAD6E4800FE61FE /* MyCollectionViewCell.swift in Sources */,

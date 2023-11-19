@@ -18,10 +18,6 @@ final class DiffableDataSourceCollectionView<Section: Hashable, Item: Hashable>:
         collectionViewLayout = layoutProvider.createLayout(dataSource: diffableDataSource)
     }
 
-    deinit {
-        print("deinit DiffableDataSourceCollectionView")
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

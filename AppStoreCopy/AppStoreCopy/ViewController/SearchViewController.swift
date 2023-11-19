@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController {
-    
+final class SearchViewController: MVVMCViewController<SearchViewModel, SearchCoordinator> {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

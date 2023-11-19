@@ -27,10 +27,6 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
         super.init(viewModel: viewModel)
     }
 
-    deinit {
-        print("deinit AppsViewController")
-    }
-
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -44,25 +40,28 @@ final class AppsViewController: MVVMCViewController<AppsViewModel, AppsCoordinat
         
         update(sectionModels: [appSectionModel], animatingDifferences: true)
     }
-
-    func setCollectionView() {
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
-    }
 }
 
-extension AppsViewController: ViewConfigurable, UniDirectionalBindable {
-    func configureViews() {
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-    }
-    
+extension AppsViewController: UniDirectionalBindable {
     func bindInput() {
         
     }
     
     func bindOutput() {
         
+    }
+}
+
+extension AppsViewController: ViewConfigurable {
+    func configureViews() {
+        setCollectionView()
+    }
+    
+    func setCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: MyCollectionViewCell.self))
     }
 }

@@ -20,22 +20,28 @@ final class MainCoordinator: AbstractCoordinator {
     weak var searchViewController: UIViewController?
     
     weak var todayCoordinator: AbstractCoordinator?
+    weak var searchCoordinator: AbstractCoordinator?
     weak var appsCoordinator: AbstractCoordinator?
     
     func start() -> UIViewController {
         let mainTabBarController = MainTabBarController(mainCoordinator: self)
-        
-        let todayCoordinator = TodayCoordinator()
-        let todayNavigationController = todayCoordinator.start()
-        self.todayViewController = todayNavigationController
-        self.todayCoordinator = todayCoordinator
         
         let appsCoordinator = AppsCoordinator()
         let appsNavigationContoller = appsCoordinator.start()
         self.appsViewController = appsNavigationContoller
         self.appsCoordinator = appsCoordinator
         
-        mainTabBarController.viewControllers = [todayNavigationController, appsNavigationContoller]
+        let searchCoordinator = SearchCoordinator()
+        let searchNavigationController = searchCoordinator.start()
+        self.searchViewController = searchNavigationController
+        self.searchCoordinator = searchCoordinator
+        
+        let todayCoordinator = TodayCoordinator()
+        let todayNavigationController = todayCoordinator.start()
+        self.todayViewController = todayNavigationController
+        self.todayCoordinator = todayCoordinator
+        
+        mainTabBarController.viewControllers = [searchNavigationController, appsNavigationContoller, todayNavigationController]
         
         registerRootViewController(viewController: mainTabBarController)
         return mainTabBarController

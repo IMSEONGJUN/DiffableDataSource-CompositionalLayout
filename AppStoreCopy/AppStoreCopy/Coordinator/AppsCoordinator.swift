@@ -13,7 +13,7 @@ class AppsCoordinator: AbstractCoordinator {
                                                     collectionViewlayoutProvider: AppsCollectionViewLayoutProvider())
         appsViewController.coordinator = self
         appsViewController.navigationItem.title = "Apps"
-        appsViewController.tabBarItem = UITabBarItem(title: "Apps", image: UIImage(systemName: "square.3.stack.3d"), tag: 1)
+        appsViewController.tabBarItem = UITabBarItem(title: "Apps", image: UIImage(systemName: "square.3.stack.3d"), tag: 0)
         
         let appsNavigationController = UINavigationController(rootViewController: appsViewController)
         appsNavigationController.navigationBar.prefersLargeTitles = true
